@@ -1,0 +1,14 @@
+  version: "3"
+
+  services:
+    # api:
+    #   build: ./api
+    #   ports:
+    #   - 8080:8080
+    #   container_name: api
+
+    db:
+      image: mongo:4
+      ports:
+        - "27017:27017"
+      container_name: db

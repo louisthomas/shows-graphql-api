@@ -1,0 +1,15 @@
+type Query {
+    shows(titleFilter: String): [Show]
+}
+
+type Mutation {
+    addShow(title: String, releaseYear: Int, posterUrl: String): Show
+    removeShow(id: String): Show
+}
+
+type Show {
+    id: String
+    title: String
+    releaseYear: Int
+    posterUrl: String
+}

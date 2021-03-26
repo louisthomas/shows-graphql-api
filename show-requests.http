@@ -1,0 +1,37 @@
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{"query":"mutation {addShow(title:\"batman4\", releaseYear:2019) {id,title,releaseYear}}"}
+
+
+############
+
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{"query":"mutation {addShow(title:\"Top Gun\", releaseYear:2019) {id,title,releaseYear}}"}
+
+############
+
+POST http://localhost:8080/graphql
+Content-Type: application/graphql
+
+{
+  shows {
+     title
+     releaseYear
+  }
+}
+
+#######################
+
+POST http://localhost:8080/graphql
+Content-Type: application/graphql
+
+{
+  shows(titleFilter: "Top Gun") {
+        id,
+        title,
+        releaseYear
+    }
+}
