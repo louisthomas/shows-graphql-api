@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 @Testcontainers
-
 public class ContainerConfiguration {
 
     public static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext>{
