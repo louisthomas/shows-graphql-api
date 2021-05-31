@@ -1,0 +1,13 @@
+POST http://localhost:8080/v1/shows
+Content-Type: application/json
+
+{"title":"batman", "releaseYear":2019, "posterUrl": "https://www.poster.com/batman/1"}
+
+############
+
+GET http://localhost:8080/v1/shows
+Content-Type: application/json
+
+############
+
+DELETE http://localhost:8080/v1/shows/1

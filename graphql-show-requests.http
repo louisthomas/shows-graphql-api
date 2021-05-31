@@ -1,6 +1,6 @@
 POST http://localhost:8080/graphql
 Content-Type: application/json
-Authorization: Bearer <Your token>
+#Authorization: Bearer <Your token>
 
 {"query":"mutation {addShow(title:\"batman\", releaseYear:2019) {id,title,releaseYear}}"}
 
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 POST http://localhost:8080/graphql
 Content-Type: application/graphql
-Authorization: Bearer <Your token>
+#Authorization: Bearer <Your token>
 
 {
   shows {
@@ -30,7 +30,7 @@ POST http://localhost:8080/graphql
 Content-Type: application/graphql
 
 {
-  shows(titleFilter: "Top Gun") {
+  shows(titleFilter: "batman") {
         id,
         title,
         releaseYear

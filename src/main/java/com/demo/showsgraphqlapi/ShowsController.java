@@ -1,34 +1,31 @@
 package com.demo.showsgraphqlapi;
 
-import com.netflix.graphql.dgs.DgsComponent;
-import com.netflix.graphql.dgs.DgsData;
-import com.netflix.graphql.dgs.InputArgument;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@DgsComponent
+@RestController
+@RequestMapping("/v1/shows")
 public class ShowsController {
 
-  private ShowsService showsService;
+    private final ShowsService showsService;
 
-  public ShowsController(ShowsService showsService) {
-    this.showsService = showsService;
-  }
+    public ShowsController(ShowsService showsService) {
+        this.showsService = showsService;
+    }
 
-  @DgsData(parentType = "Query", field = "shows")
-  public List<Show> shows(@InputArgument("titleFilter") String titleFilter) {
-    return showsService.getShows(titleFilter);
-  }
+    @GetMapping
+    public List<Show> shows(@RequestParam(required = false) String title) {
+        return showsService.getShows(title);
+    }
 
-  @DgsData(parentType = "Mutation", field = "addShow")
-  public Show addShow(@InputArgument("title") String title,
-                      @InputArgument("releaseYear") int releaseYear,
-                      @InputArgument("posterUrl") String posterUrl) {
-    return showsService.addShow(title, releaseYear, posterUrl);
-  }
+    @PostMapping
+    public Show addShow(@RequestBody ShowDto showDto) {
+        return showsService.addShow(showDto.getTitle(), showDto.getReleaseYear(), showDto.getPosterUrl());
+    }
 
-  @DgsData(parentType = "Mutation", field = "removeShow")
-  public Show removeShow(@InputArgument("id") String id) {
-    return showsService.removeShow(id);
-  }
+    @DeleteMapping("/{id}")
+    public Show removeShow(@PathVariable("id") String id) {
+        return showsService.removeShow(id);
+    }
 }
