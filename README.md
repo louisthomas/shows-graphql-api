@@ -7,7 +7,7 @@ Graphql and Rest api example developped with [DGS framework](https://netflix.git
 ## Prerequisites
 Make sure you have installed all of the following prerequisites on your development machine:
 * Docker - [Download & Install Docker](https://docs.docker.com/get-docker/).
-* Java
+* Java 11
 
 ## Run Locally
 
