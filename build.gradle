@@ -22,7 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 //	implementation  'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation "com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:latest.release"
+	implementation "com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:5.0.4"
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //	testImplementation 'org.springframework.security:spring-security-test'
